@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+
+    <!--GOOGLE FONTS-->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--BOOTSTRAP-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body id="game">
+    <header>
+      <h1 class="text-center mt-4 mb-2 headTag">MEMORY GAME</h1>
+    </header>
+
+    <section class="container mx-auto">
+      <section class="mx-auto">
+        <div class="row">
+          <div class="col-12 text-center points">
+            <p>Points won: <span id="point"> 0</span></p>
+          </div>
+        </div>
+
+        <div id="won" class="text-center">
+          <h1>You have won it😎✨🎉🎊!</h1>
+          <p>Points won: <span id="finalPoints">0</span></p>
+          <button class="btn" id="playAgain">Play another game</button>
+          <!-- <div class="button" onmousedown="party.confetti(this)">Click me!</div> -->
+        </div>
+
+        <section class="memory-game">
+          <div class="memory-card" data-cards="card1">
+            <img class="front-face" src="Images/black_white_woman.jpg" alt="bwwoman" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card1">
+            <img class="front-face" src="Images/black_white_woman.jpg" alt="bwwoman" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+          <div class="memory-card" data-cards="card2">
+            <img class="front-face" src="Images/blue_Women.jpg" alt="blueWomen" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card2">
+            <img class="front-face" src="Images/blue_Women.jpg" alt="blueWomen" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+          <div class="memory-card" data-cards="card3">
+            <img class="front-face" src="Images/children_couple.jpg" alt="children" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card3">
+            <img class="front-face" src="Images/children_couple.jpg" alt="children" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+          <div class="memory-card" data-cards="card4">
+            <img class="front-face" src="Images/couple_dance.jpg" alt="couple" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card4">
+            <img class="front-face" src="Images/couple_dance.jpg" alt="couple" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+          <div class="memory-card" data-cards="card5">
+            <img class="front-face" src="Images/covid_doctors.jpg" alt="covid" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card5">
+            <img class="front-face" src="Images/covid_doctors.jpg" alt="covid" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+          <div class="memory-card" data-cards="card6">
+            <img class="front-face" src="Images/man_lifting_woman.jpg" alt="manLifting" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card6">
+            <img class="front-face" src="Images/man_lifting_woman.jpg" alt="manLifting" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+          <div class="memory-card" data-cards="card7">
+            <img class="front-face" src="Images/old_couple.jpg" alt="oldCouple" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card7">
+            <img class="front-face" src="Images/old_couple.jpg" alt="oldCouple" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+          <div class="memory-card" data-cards="card8">
+            <img class="front-face" src="Images/peacock.jpg" alt="peacock" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+          <div class="memory-card" data-cards="card8">
+            <img class="front-face" src="Images/peacock.jpg" alt="peacock" />
+            <img class="back-face" src="https://media1.giphy.com/media/S65GkxL15Z8uGTF8Zl/giphy.gif?cid=ecf05e47lqm1hjjteip3izqpixuqes6wwzcplvf7s5pir2bw&rid=giphy.gif&ct=g" alt="sky" />
+          </div>
+
+        </section>
+      </section>
+    </section>
+
+    <script src="script2.js"></script>
+  </body>
+</html>
